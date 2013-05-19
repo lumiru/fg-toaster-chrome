@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Options de Fallen Galaxy</title>
+	<meta charset="utf-8" />
+	<script type="text/javascript">
+window.addEventListener("load", function() {
+	if(localStorage["sound-battle"] == "true") {
+		document.getElementById("sound-battle").checked = true;
+	}
+	if(localStorage["sound-whisper"] == "true") {
+		document.getElementById("sound-whisper").checked = true;
+	}
+
+	document.getElementsByTagName("button")[0].addEventListener("click", function() {
+		localStorage["sound-battle"] = document.getElementById("sound-battle").checked;
+		localStorage["sound-whisper"] = document.getElementById("sound-whisper").checked;
+	}, false);
+}, false);
+	</script>
+</head>
+<body>
+	<ul>
+		<li>
+			<label>
+				<input type="checkbox" id="sound-battle" />
+				Émettre un son lors d'une alerte de combat.
+			</label>
+		</li>
+		<li>
+			<label>
+				<input type="checkbox" id="sound-whisper" />
+				Émettre un son lors d'une alerte due à un murmure.
+			</label>
+		</li>
+	</ul>
+	<p>
+		<button>Enregistrer</button>
+	</p>
+</body>
+</html>
